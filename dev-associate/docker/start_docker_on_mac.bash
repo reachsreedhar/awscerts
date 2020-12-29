@@ -17,3 +17,11 @@ docker run hello-world
 
 # Run this command to configure your shell: 
 eval $(docker-machine env)
+
+# On Mac, docker desktop
+docker run --name repo alpine/git clone https://github.com/docker/getting-started.git
+docker cp repo:/git/getting-started/ .
+docker build -t docker101tutorial .
+docker run -d -p 80:80 --name docker-tutorial docker101tutorial
+docker tag docker101tutorial anukcs/docker101tutorial
+docker push anukcs/docker101tutorial

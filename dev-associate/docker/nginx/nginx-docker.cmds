@@ -11,4 +11,4 @@ COPY static-html-directory /usr/share/nginx/html
 docker build -t kcs-nginx .
 
 # Run
-docker run --name kcs-nginx -d -p 80:8088 kcs-nginx
+docker run --name kcs-nginx -d -p 8088:80 kcs-nginx
